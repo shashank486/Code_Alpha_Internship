@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;700&display=swap');
+body{
+	font-family: 'Nunito', sans-serif;
+	/* background: radial-gradient(circle, rgba(240, 52, 52, 1) 20%, rgba(255, 203, 5, 1) 100%); */
+
+}
+
+.slider{
+	max-width: 550px;
+    max-height: 350px;
+    width: calc(100% - 30px);
+    height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 6px solid rgba(255,255,255,0.3);
+	border-radius: 5px;
+	backdrop-filter: blur(5px);
+	background-clip: border-box;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.slider-inner{
+	width: 100%;
+	height: 100%;
+}
+.slider-inner .slide{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transition: 0.5s ease 0.5s;
+	overflow: hidden;
+	visibility: hidden;
+	opacity: 0;
+	z-index: -1;
+}
+.slider-inner .slide img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.slider-inner .slide h3{
+	width: 100%;
+	font-size: 16px;
+	font-weight: 100;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	margin: 0;
+	padding: 5px 10px;
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	margin-bottom: -25;
+	transition: 0.5s ease 0.5s;
+}
+.slider-inner .slide.current{
+	opacity: 1;
+	visibility: visible;
+	z-index: 1;
+}
+.slider-inner .slide.current h3{
+	bottom: 0;
+}
+.slider-control{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	z-index: 10;
+}
+.slider-control .next,
+.slider-control .prev{
+	display: inline-block;
+	font-size: 30px;
+	color: #eee;
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 2px solid rgba(255,255,255,0.3);
+	border-radius: 2px;
+	backdrop-filter: blur(5px);
+	background-clip: border-box;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	padding: 0 8px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+.slider-control .next{
+	right: 5px;
+}
+.slider-control .prev{
+	left: 5px;
+}
+.slider-control .next:before{
+	content: '\00BB';
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.slider-control .prev:before{
+	content: '\00AB';
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.slider-control .next:hover,
+.slider-control .prev:hover{
+	background-color: #fff;
+}
+.slider-control .next:hover:before,
+.slider-control .prev:hover:before{
+	color: #333;
+	text-shadow: none;
+}
